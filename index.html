@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <style>
+        * { 
+            box-sizing: border-box;           
+            padding: 0;
+            margin: 0;
+            transition: 0.3s ease;
+        }
+       
+        body{
+            overflow-x: hidden;
+            background-color: #f8f8f8;
+        }
+        .topbar{
+            z-index: 2;
+            position: fixed;
+            width: 100%;
+            height: 40px;
+            /* justify-content: space-between; */
+            background-color: #222;
+            /* height: 38px; */
+            padding: 8px;
+
+        }
+        .topbar .link{
+            display: flex;
+            justify-content: space-between;
+            margin-left: 40px;
+            width: 10%;
+             background-color: #222;
+           /* border: 1px solid white;   */
+        }  
+           
+            .topbar .link a i{
+                font-size: 12px;
+                color: aliceblue;
+               
+            }
+            .topbar .link a i:hover{
+                color: #ffc107;
+            }
+        .topbar span{
+            position: absolute;
+            right: 40px;
+            bottom: 10px;
+            font-size: 13px;
+            word-spacing: 10px;
+            font-weight: 100;
+            margin-right: 40px;
+            font-family: Arial, Helvetica, sans-serif;
+             color: aliceblue;
+        }    
+        nav{
+            z-index: 2;
+            top: 40px;
+            position: fixed;
+            box-shadow: 0px 6px 30px 0px rgb(205, 203, 203);
+            background-color: white;
+            display: flex;
+            justify-content: space-between;
+            height: 70px;
+            width: 100%;
+            
+            /* border: 1px solid; */
+        } 
+            nav img{
+                margin-top: 20px;
+                width: 135px;
+                height: 30px;
+                margin-left: 60px;
+            }   
+            nav .link{
+                margin-right: 60px;
+            }
+            nav a{
+                background-color: white;
+                text-decoration: none;
+                font-family: Arial, Helvetica, sans-serif;
+                color: black;
+                font-size: 12px;
+                display: inline-block;
+                padding: 28px 10px ;
+            }
+        .content1{
+            padding-top: 110px;
+            text-align: center;
+            /* border: 2px solid red;     */
+            /* height: 200vh; */
+        }
+           .content1 .bgimg{
+              position: relative;
+              /* border: 2px solid red;     */
+              text-align: center;
+              /* top: 110px;           */
+              background-image: radial-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),url(header-bg.avif);
+              height: 90vh;
+              width: 100%;
+              background-position: center;
+              background-size: cover;
+              background-repeat: no-repeat;
+            
+            }
+              .content1 .bgimg .imgtxt{
+                z-index: 1;
+                top: 118px;
+                position: absolute;
+                margin: auto;
+                text-align: center;
+                width: 100%;
+                /* border: 1px solid white; */
+              }
+                .content1 .bgimg .imgtxt h4,h2,p{
+                    font-family: Arial, Helvetica, sans-serif;
+                    color: #f8f8f8;
+                }
+                 .content1 .bgimg .imgtxt h4{
+                    font-size: 14px;
+                    font-weight: 200;
+                    letter-spacing: 2px;
+                 }
+                .content1 .bgimg .imgtxt h2{
+                    font-size: 50px;
+                    margin-top: 20px;
+                    margin-bottom: 25px;
+                }
+                .content1 .bgimg .imgtxt p{
+                    width: 50%;
+                    /* border: 1px solid white; */
+                    margin: auto;
+                } 
+                .content1 .bgimg .imgtxt button{
+                    padding: 15px 28px;
+                    color: #222;
+                    font-weight: 600;
+                    background-color: #ffc107;
+                    border: 1px solid #ffc107;
+                    margin-top: 30px;
+                    transition: 0.3s ease;
+                }  
+                   .content1 .bgimg .imgtxt button:hover{
+                    cursor: pointer;
+                    color: #f8f8f8;
+                    
+                    border: 1px solid #f8f8f8;
+                    background: transparent;
+                  }
+           .content1 .worksec{
+              /* margin-top: 140px;
+              margin-bottom: 140px; */
+              display: flex;
+              justify-content: space-around;
+              width: 100%;
+              border: 1px solid black;
+           }   
+              .content1 .worksec .work{
+                   display: flex;
+                   flex-direction: column;
+                   justify-content: center;
+                   align-items: center;
+                   width: 28%;
+                   height: 500px;
+                   text-align: center;
+              /* border: 1px solid black; */
+                   
+              }
+                .content1 .worksec .shape{
+                    position: relative;
+                   width: 100px;
+                   margin-bottom: 20px;
+                   aspect-ratio: 1;
+                   background-color: grey;
+                   clip-path: polygon(
+                      50% 0%,93.3% 25%,93.3% 75%,50% 100%,6.7% 75%,6.7% 25%);
+                }
+                   .content1 .worksec .shape:hover i{
+                       background-color: #ffc107;
+                       
+                   }
+        
+                    .content1 .worksec .shape i{
+                        color: #04091e;
+                        font-size: 30px;
+                        position: absolute;
+                        background-color: #e9ecef;
+                        padding: 60px;
+                        top: -25px;
+                        left: -26px;
+
+                    }
+                            .content1 .worksec .worktxt h2{
+                                color: #222;
+                                font-size: 20px; 
+                                /* margin-top: 40px; */
+                            }
+                            .content1 .worksec .worktxt p{
+                                margin-top: 30px;
+                                line-height: 25px;
+                                font-size: 15px;
+                                color: #6b6b6b;
+                            }
+
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+           .content1 .frm{
+            padding: 40px;
+            height: 100vh;
+            background-color:#e9ecef;
+             width: 100%;
+             display: flex;
+             justify-content: center;
+             gap: 40px;
+           }    
+               .content1 .frm .frmtxt{
+                  /* border: 1px solid; */
+                  width: 60%;
+                  text-align: left;
+               }  
+                    .content1 .frm .frmtxt span{
+                        font-family: Arial, Helvetica, sans-serif;
+                         color: #8a6400;
+                       
+                    }
+                    .content1 .frm .frmtxt h2{
+                        font-size: 40px;
+                        width: 70%;
+                        font-family: Arial, Helvetica, sans-serif;
+                       color: #222;
+                       margin-top: 13px;
+                    }
+                    .content1 .frm .frmtxt p{
+                        margin-top: 8px;
+                        line-height: 25px;
+                        width:98%;
+                        font-family: Arial, Helvetica, sans-serif;
+                         color: #6b6b6b;
+                    }
+                    .content1 .frm .frmtxt .st{
+                         margin-top: 30px;
+                        color: #222;
+                    }
+                    .content1 .frm .frmtxt button{
+                        font-weight: 600;
+                        border: 1px hidden;
+                        margin-top: 40px;
+                        color: #222;
+                        background-color: #ffc107;
+                        width: 30%;
+                        padding: 12px;
+                        border: hidden;
+                    }
+                    .content1 .frm .frmtxt button:hover{
+                        background-color: #e9ecef;
+                        border: 1px solid  #8a6400;
+                        color: #8a6400;
+                        transition: 0.3s ;
+                    }
+
+               .content1 .frm .form{
+                  
+                  background-image: radial-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)),url(form-bg.avif);
+                  background-position: center;
+                  background-repeat: no-repeat;
+                  background-size: cover;
+                  width: 30%;
+                  height: 80vh;
+                  padding-top: 30px;
+                  /* border: 1px solid; */
+                   
+               }    
+                    .content1 .frm .form h3{
+                         color: #f8f8f8;
+                         font-family: Arial, Helvetica, sans-serif;
+                         margin-bottom: 30px;
+                    } 
+                    .content1 .frm .form form{
+                       display: flex;
+                       margin: auto;
+
+                       gap: 5px;
+                       flex-direction: column;
+                       width: 80%;
+                       height: 90%;
+                       /* border: 1px solid snow; */
+                    }
+                        .content1 .frm .form form input{
+                            padding-left: 10px;
+                            height: 8%;
+                            background: transparent;
+                            outline: 1px snow;
+                            border: 1px solid  #e9ecef;
+                            color: #e9ecef;
+                           
+                        }
+                        .content1 .frm .form form input::placeholder{
+                            color: #e9ecef;
+                        }
+
+                        .content1 .frm .form form select{
+                             height: 10%;
+                              background: transparent;
+                            outline: 1px snow;
+                            border: none;
+                             border: 1px solid  #e9ecef;
+                        }
+                              .content1 .frm .form form select{
+                                padding-left: 6px;
+                                 color: #e9ecef;
+                              }
+                               .content1 .frm .form form select option{
+                                 color: #222;
+                               }
+                         
+                        .content1 .frm .form form textarea{
+                            padding-top: 5px;
+                            padding-left: 10px;
+                            height: 35%;
+                            background: transparent;
+                            outline: 1px snow;
+                            border: none;
+                            color: #e9ecef;
+                            font-family: Arial, Helvetica, sans-serif;
+                            border: 1px solid  #e9ecef;
+                        }
+                               .content1 .frm .form form textarea::placeholder{
+                                     font-family: Arial, Helvetica, sans-serif;
+                                     color: #e9ecef;
+                               }
+                        .content1 .frm .form form button{
+                            font-weight: 600;
+                            height: 11%;
+                            background-color: #ffc107;
+                            border-radius: 0%;
+                            border: none;
+                        }
+                                .content1 .frm .form form button:hover{
+                                    cursor: pointer;
+                                }
+           .content1 .rocard{
+             /* border: 1px solid; */
+              width: 100%;
+           }
+                .content1 .rocard > h3{   
+                     margin-top: 100px;
+                     color: #222;
+                     font-family: Arial, Helvetica, sans-serif;
+                     font-size: 40px;
+                }
+                .content1 .rocard > p{
+                    margin-top: 20px;
+                    font-family: Arial, Helvetica, sans-serif;
+                    color: #6b6b6b;
+                }
+                .content1 .rocard > .cards{
+                    padding: 0;
+                    margin-top: 50px;
+                    display: flex;
+                    justify-content: center;
+                    gap: 30px;
+                    /* justify-content: center; */
+                }
+                 .content1 .rocard > .cards div{
+                    width: 28%;
+                    overflow: hidden;
+                    transiton: 0.3s ease;
+                 }
+                   
+
+                      .content1 .rocard > .cards div img{
+                          width: 100%;
+                          height: 250px;
+                          transition: 0.3s ease;
+                          overflow: hidden;
+                          /* border: 1px solid red; */
+                      }
+                      .content1 .rocard > .cards div p{
+                        text-align: left;
+                          color: #6b6b6b;
+                      }    
+                      .content1 .rocard > .cards div h3{
+                        margin-top: 20px ;
+                        margin-bottom:20px ;
+                        text-align: left;
+                        transition: 0.3s ease;
+                        font-family: Arial, Helvetica, sans-serif;
+                      }
+                    .content1 .rocard > .cards div:hover{
+                         cursor: pointer;
+                    }
+                    .content1 .rocard > .cards div:hover h3{
+                        color: #ffc107;
+                    }
+                    .content1 .rocard > .cards div:hover img{
+                        scale: 1.1;
+                        rotate: -2deg;
+                    }
+           .content1 .bgnum{
+               background-image: radial-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),url(fact.avif);
+               background-position: center;
+               background-repeat: no-repeat;
+               background-size: cover;
+               height: 65vh;
+               text-align: center;
+                display: flex;
+                align-items: center;
+                margin-top: 150px;
+                /* border: 10px solid black; */
+
+           }            
+             .content1 .bgnum .numbers{
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+                width: 100%;
+                height: 70%;
+                /* border: 1px solid; */
+             }
+             .content1 .bgnum .numbers .c div{
+                border:1px solid #ffc107;
+                border-radius: 50%;
+             }   
+             .content1 .bgnum .numbers .c > p{
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 20px;
+                margin-top: 50px;
+             }
+
+                .content1 .bgnum .numbers .a div{
+                    padding: 28px ;
+                    display: inline-block;
+                    /* padding-left: 10px;
+                    padding-right: 10px; */
+
+                }
+                .content1 .bgnum .numbers .e div{
+                    padding: 28px;
+                }
+                .content1 .bgnum .numbers .d div{
+                     padding: 28px;
+                }
+                .content1 .bgnum .numbers .b div{
+                    padding: 28px;
+                    display: inline-block;
+
+                    /* padding-left: 10px;
+                    padding-right: 10px; */
+                
+                }
+                
+                 .content1 .bgnum .numbers .ab div span{
+                    display: inline-block;
+                    font-family: Arial, Helvetica, sans-serif;
+                    font-weight: 700;
+                    font-size: x-large;
+                    color: #222;
+                    padding: 30px 24px;
+                    background-color: #ffc107;
+                    border-radius: 50%;
+                 }
+                 .content1 .bgnum .numbers .b div span{
+                    display: inline-block;
+                    font-family: Arial, Helvetica, sans-serif;
+                    color: #222;
+                    font-size: x-large;
+                    font-weight: 700;
+                    padding: 30px 22px;
+                    background-color: #ffc107;
+                    border-radius: 50%;
+                 }
+                 .content1 .bgnum .numbers .d div  span{
+                    display: inline-block;
+                    font-family: Arial, Helvetica, sans-serif;
+                    color: #222;
+                    font-weight: 700;
+                    font-size: x-large;
+                    padding: 30px 20px;
+                    background-color: #ffc107;
+                    border-radius: 50%;
+                 }
+             .content1 .pictures{
+                margin-top: 100px;
+                display: flex;
+                flex-direction: column;
+                gap: 35px;
+                width: 100%;
+             }    
+                    .content1 .pictures .heading{
+                        width: 100%;
+                    }
+                             .content1 .pictures .heading h3{
+                                color: #222;
+                                font-family: Arial, Helvetica, sans-serif;
+                                font-size: 40px;
+                             }
+                             .content1 .pictures .heading p{
+                                margin-top: 20px;
+                                margin-bottom: 40px;
+                                color: #6b6b6b;
+                             }
+                    .content1 .pictures .picr1{
+                        display: flex;
+                        justify-content: center;
+                        gap: 35px;
+                    }  
+                    .content1 .pictures .picr2{
+                         display: flex;
+                        justify-content: center;
+                        gap: 35px; 
+                    }
+               .content1 .feedback {
+                    margin-top: 200px;
+                    padding-top: 40px;
+                    height: 110vh;
+                    background-image: radial-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),url(feedback-bg.avif);
+                    background-position: center;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    /* scale: 1.25; */
+                                       
+               }   
+                    .content1 .feedback .bg{
+                        margin-bottom: 100px;   
+                        width: 100%;
+                    }
+                        .content1 .feedback .bg .bghead {
+                            line-height: 40px;
+                        }
+                            .content1 .feedback .bg .bghead h3{
+                                font-size: 40px;
+                                /* margin-right: 20px; */
+                                color: #f8f8f8;
+                                font-family: Arial, Helvetica, sans-serif;
+                            }
+                            .content1 .feedback .bg .bghead p{
+                                color:#f8f8f8;
+                                font-size: medium;
+                            }
+                        .content1 .feedback .bg .bgcon {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            gap: 20px;
+                            /* text-align: center; */
+                            width: 95%;
+                            margin-top: 50px ;
+                            margin-left: 30px;
+                            justify-content: center;
+                            /* border: 1px solid #f8f8f8; */
+                        }
+                          .content1 .feedback .bg .bgcon .txt{
+                               width: 45%;
+                          } 
+                            .content1 .feedback .bg .bgcon .txt p{
+                                text-align: left;
+                                width: 100%;
+                                font-size: 15px;
+                                line-height: 22px;
+                            }
+                            .content1 .feedback .bg .bgcon .txt h4{
+                                text-align: left;
+                                font-size: 20px;
+                                font-family: Arial, Helvetica, sans-serif;
+                                color: #f8f8f8;
+                                /* margin-top: 60px; */
+                                /* margin-bottom: 15px; */
+                                /* margin: 0px 10px 0px 0px ; */
+                            }
+                                  .content1 .feedback .bg .bgcon h4 i{
+                                      font-size: 12px;
+                                      margin-bottom: 20px;
+                                      margin-left: 10px;
+                                  }
+                            .content1 .feedback .bg .bgcon img{
+                                width: 45%;
+                            }
+           .content1 .cards2head  {
+                 width: 100%;
+                 margin-top: 120px;
+           }
+                  .content1 .cards2head h3{
+                       font-size: 40px;
+                       font-family: Arial, Helvetica, sans-serif;
+                       margin-bottom: 30px;
+                  }
+                  .content1 .cards2head p{
+                       text-align: center;
+                       margin: auto;
+                       width: 35%;
+                       color: #6b6b6b;
+                  }
+           .content1 .cards2{
+            margin-top: 100px;
+                display: flex;
+                justify-content: center;
+                gap: 30px;
+           }    
+                .content1 .cards2 .card{
+                    width: 28.5%;
+                }
+                .content1 .cards2 .card:hover .img img{
+                    scale: 1.05;
+                } 
+                  .content1 .cards2 .card .img{
+                      overflow: hidden;
+                      height: 220px;
+                  }  
+                  .content1 .cards2 .card .profl{
+                      margin-top: 10px;
+                      padding-bottom: 10px;
+                      border-bottom: 1px solid #6b6b6b;
+                      display: flex;
+                      width: 100%;
+                      justify-content: space-between;
+                      align-items: center;
+                      /* border: 1px  solid black; */
+                      box-sizing: border-box;
+                      font-family: Arial, Helvetica, sans-serif;
+                      color: #6b6b6b;
+                  }
+                        .content1 .cards2 .card .profl div{
+                             display: flex;
+                             align-items: center;
+                             gap: 10px;
+                        }
+                  .content1 .cards2 .card .txt{
+                      font-family: Arial, Helvetica, sans-serif;
+                      /* width: 20%; */
+                  }
+                          .content1 .cards2 .card .txt a{
+                            display: block;
+                             text-align: left;
+                             text-transform: uppercase ;
+                             text-decoration: none;
+                             font-size: 17px;
+                             font-weight: 600;
+                             color: #222;
+                             margin-top: 30px;
+                          }
+                          .content1 .cards2 .card .txt p{
+                              color: #6b6b6b;
+                              text-align: left;
+                              font-size: medium;
+                              margin-top: 10px;
+                              line-height: 20px;
+                          }
+                          .content1 .cards2 .card:hover .txt a{
+                               color: #ffc107;
+                          }
+        footer{
+            margin-top: 150px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            background-color: #04091e;
+            height: 70vh;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #6b6b6b;
+            padding-top: 100px;
+            padding-bottom: 100px;
+            /* padding-left: 30px;
+            padding-right: 30px; */
+        }  
+               footer .about{
+                  width: 35%;
+               }  
+                    footer .about h3{
+                        font-size: 20px;
+                        color: #f8f8f8;
+                        margin-bottom: 30px;
+                        
+                    }
+                    footer .about p{
+                        line-height: 25px;
+                        color: #6b6b6b;
+                        margin-bottom: 40px;
+                    }
+                        footer .about p a , i{
+                            color: #ffc107;
+                        }
+               footer .nl{
+                  /* border: 1px solid #f8f8f8; */
+                  width: 35%;
+               }
+                    footer .nl h3{
+                        font-size: 20px;
+                        color: #f8f8f8;
+                        margin-bottom: 30px;
+                    }
+                    footer .nl p{
+                        color: #6b6b6b;
+                        margin-bottom: 20px;
+                    }
+                    footer .nl .inp{
+                        position: relative;
+                        height: 40px;
+                         /* border: 1px solid #f8f8f8; */
+                    }
+                        footer .nl .inp input{
+                            height: 40px;
+                            width: 80%;
+                            position: absolute;
+                            top: 0;
+                        }
+                        footer .nl .inp button{
+                            position:absolute;
+                            height: 40px;
+                            width: 10%;
+                            right: 44px;
+                            border: hidden;
+                            background-color: #ffc107;
+                        }
+                             footer .nl .inp button i{
+                                color: #222;
+                             }
+                             footer .nl .inp button i:hover{
+                                cursor: pointer;
+                             }
+               footer .fl{
+                  width: 20%;
+               }
+                    footer .fl h3{
+                        font-size: 20px;
+                        color: #f8f8f8;
+                        margin-bottom: 30px;
+                    }
+                    footer .fl i{
+                        color: #e9ecef;
+                        margin-top: 30px;
+                        margin-right: 20px;
+                    }
+                       footer .fl i:hover{
+                         color: #ffc107;
+                       }
+
+    </style>
+</head>
+<body>
+    <header>
+         <div class="topbar">
+            <div class="link">
+                <a href=""><i class="fa-brands fa-facebook-f"></i></a>
+                <a href=""><i class="fa-solid fa-basketball"></i></a>
+                <a href=""><i class="fa-brands fa-x-twitter"></i></a>
+                <a href=""><i class="fa-brands fa-behance"></i></a>
+            </div>
+            <span>+1(555)014-2290 hello@example.com</span>
+         </div>
+         <nav>
+            <img src="logo.avif">
+            <div class="link">
+                <a href="">HOME </a>
+                <a href="">ABOUT</a>
+                <a href="">SERVICE</a>
+                <a href="">PROJECTS</a>
+                <a href="">BLOG</a>
+                <a href="">CONTENT</a>
+                <a href="">ELEMENT</a>
+            </div>
+         </nav>
+    </header>
+    <div class="content1">
+       <div class="bgimg">
+         <div class="imgtxt">
+           <h4>DON'T LOOK FURTHER, HERE IS THE KEY</h4>
+           <h2>We’re Your Industrial Solution</h2>
+           <p>Engineering, construction and maintenance for factories, warehouses and utility plants, delivered safely, on time and to specification.</p>
+           <button>GET STARTED</button>
+         </div>
+       </div>
+       <div class="worksec">
+          <div class="work">
+              <div class="shape"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+              <div class="worktxt"><h2>Maintenance</h2><p>Planned and emergency maintenance for pumps, valves, conveyors and electrical systems, so your production lines keep running.</p></div>
+          </div>
+          <div class="work">
+            <div class="shape"><i class="fa-solid fa-rocket"></i></div>
+            <div class="worktxt"><h2>Residential Service</h2><p>Heating, plumbing and electrical upgrades for apartment blocks and housing projects, carried out safely and to code.</p></div>
+          </div>
+          <div class="work">
+            <div class="shape"><i class="fa-solid fa-bug"></i></div>
+            <div class="worktxt"><h2>Commercial Service</h2><p>Fit-outs, HVAC and power distribution for offices, retail units and warehouses, planned around your opening hours.</p></div>
+          </div>
+       </div>
+       <div class="frm">
+          <div class="frmtxt">
+             <span>Engineering partners since 1998</span>
+             <h2>We build what keeps industry moving</h2>
+             <p class="st">We are here to listen to you and deliver excellence </p><p> For more than twenty years we have designed, built and maintained the places where things are made: factories, warehouses, workshops and utility plants. Our engineers, site managers and technicians work as one team from the first survey to the final handover, so you deal with one contractor, one schedule and one point of contact. Every project is planned around safety, quality and the hours your business needs to keep running.</p>
+             <button>Get Started Now</button>
+          </div>
+          <div class="form">
+                <h3>Request a Quote</h3>
+                <form>
+                    <select>
+                      <option value="" selected disabled>Select Service</option>
+                      <option value="Maintenance">Maintenance</option>
+                      <option value="Residential Services">Residential Services</option>
+                      <option value="Commercial Service">Commercial Service</option>
+                      <option value="Industrial Engineering">Industrial Engineering</option>
+                    </select>
+                    <input type="text" placeholder="Name">
+                    <input type="number" placeholder="Phone Number">
+                    <input type="email" placeholder="Email Address">
+                    <textarea placeholder="Message"></textarea>
+                    <button>Request Free Quote</button>
+                </form>
+            </div>
+       </div>
+       <div class="rocard">
+           <h3>Our Core Market Sectors</h3>
+           <p>The industries we have served for more than twenty years.</p>
+           <div class="cards">
+              <div>
+                <img src="s1.avif">
+                <h3>Automotive Engineering</h3>
+                <p>Assembly lines, paint shops and test cells for vehicle and parts makers, from layout to commissioning.</p>
+              </div>
+              <div>
+                <img src="s2.avif">
+                <h3>Construction & Engineering</h3>
+                <p>Steel structures, foundations and site services for plants, depots and logistics centres.</p>
+              </div>
+              <div>
+                <img src="s3.avif">
+                <h3>Industrial Engineering</h3>
+                <p>Process piping, tanks and utilities for food, chemical and pharmaceutical production.</p>
+              </div>
+           </div>
+       </div>
+       <div class="bgnum">
+            <div class="numbers">
+                <div class="b c">
+                    <div><span>2K+</span></div>
+                    <p>Projects Completed</p>
+                </div>
+                <div class="c d">
+                    <div><span>5.5K</span></div>
+                    <p>Total Employees</p>
+                </div>
+                <div class="ab e c">
+                    <div><span>959</span></div>
+                    <p>Happy Clients</p>
+                </div>
+                <div class="ab c a">
+                    <div><span>367</span></div>
+                    <p>Service Calls Answered</p>
+                </div>
+            </div>
+       </div>
+       <div class="pictures">
+            <div class="heading">
+                <h3>Latest Finished Projects</h3>
+                <p>Recent work for plants, warehouses and workshops.</p>
+            </div>
+            <div class="picr1">
+                <img src="p1.avif" >
+                <img src="p2.avif" >
+            </div>
+            <div class="picr2">
+                <img src="p3.avif" >
+                <img src="p4.avif" >
+            </div>
+       </div>
+       <div class="feedback">
+            <div class="bg">
+                <div class="bghead">
+                    <h3>Enjoy our Clients’ Feedback</h3>
+                    <p>Plant managers and site owners on working with us.</p>
+                </div>
+                <div class="bgcon">
+                    <img src="video-bg.avif">
+                    <div class="txt">
+                        <h4>Fannie Rowe<i class="fa-solid fa-star" style="color: rgb(255, 212, 59);"></i><i class="fa-solid fa-star" style="color: rgb(255, 212, 59);"></i><i class="fa-solid fa-star" style="color: rgb(255, 212, 59);"></i><i class="fa-solid fa-star" style="color: rgb(120, 121, 124);"></i><i class="fa-solid fa-star" style="color: rgb(120, 121, 124);"></i></h4>
+                        <p>They rebuilt our packaging line over a single weekend shutdown. The crew was on time, the site was clean, and production restarted on Monday morning exactly as promised.</p>
+                    </div>
+                </div>
+            </div>
+       </div>
+       <div class="cards2head">
+            <h3>Latest posts from our Blog</h3>
+            <p>News, guides and lessons learned from our engineers and site crews.</p>
+       </div>
+       <div class="cards2">
+            <div class="card">
+                <div class="img"><img src="b1.avif"></div>
+                <div class="profl">
+                    <div><img src="user.avif"><span>Adele Gonzalez</span></div>
+                    <span>18th Sep<i class="fa-regular fa-heart"></i>15<i class="fa-regular fa-comment"></i>05</span>
+                </div>
+                <div class="txt">
+                    <a href="">Stainless Process Lines: Inspection Basics</a>
+                    <p>What our engineers check on stainless tanks and pipework at every planned shutdown, and why the small welds matter most.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="img"><img src="b2.avif"></div>
+                <div class="profl">
+                    <div><img src="user.avif"><span>Adele Gonzalez</span></div>
+                    <span>2nd Sep<i class="fa-regular fa-heart"></i>12<i class="fa-regular fa-comment"></i>03</span>
+                </div>
+                <div class="txt">
+                    <a href="">Planning a Loading Bay That Works All Year</a>
+                    <p>Doors, levellers, lighting and floor drainage: the details that decide whether a warehouse bay copes with winter.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="img"><img src="b3.avif"></div>
+                <div class="profl">
+                    <div><img src="user.avif"><span>Adele Gonzalez</span></div>
+                    <span>21th August<i class="fa-regular fa-heart"></i>21<i class="fa-regular fa-comment"></i>04</span>
+                </div>
+                <div class="txt">
+                    <a href="">Night Shifts: Lighting a Plant for Safe Work</a>
+                    <p>How we survey and relight process areas so night crews can see hazards clearly without glare.</p>
+                </div>
+            </div>
+       </div>
+    </div>
+    <footer>
+         <div class="about">
+             <h3>About Us</h3>
+             <p>Industry is an engineering and construction contractor for manufacturers, warehouses and utilities since 1998.</p>
+             <p>Copyright ©2026 All rights reserved | This template is made with love <i class="fa-regular fa-heart"></i> by <a href="">Colorlib</a></p>
+         </div>
+         <div class="nl">
+            <h3>Newsletter</h3>
+            <p>Stay updated with our latest news</p>
+            <div class="inp">
+                <input type="">
+                <button><i class="fa-solid fa-arrow-right-long"></i></button>
+            </div>
+         </div>
+         <div class="fl">
+            <h3>Follow Us</h3>
+            <span>Let us be social</span>
+            <div>
+                 <a href=""><i class="fa-brands fa-facebook-f"></i></a>
+                <a href=""><i class="fa-solid fa-basketball"></i></a>
+                <a href=""><i class="fa-brands fa-x-twitter"></i></a>
+                <a href=""><i class="fa-brands fa-behance"></i></a>
+            </div>
+         </div>
+    </footer>
+</body>
+</html>
